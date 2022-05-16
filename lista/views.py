@@ -39,10 +39,7 @@ def index(request):
         data=[]
         data = json.loads(json_records)
         context = {'d': data}
-        # print(ano,mes,dia,dia_semana)
         arquivo.close()
-        
-        print(type(nomes[0]))
         return render(request, 'index.html', context)
     else:
         df = pd.read_csv('listapaes.csv', sep = ';')
