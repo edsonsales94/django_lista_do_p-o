@@ -1,6 +1,4 @@
-from fileinput import close
 import json
-from django.http import HttpResponse
 from django.shortcuts import render
 import calendar
 from datetime import date
@@ -19,7 +17,7 @@ def index(request):
     
     nomes = np.loadtxt(fname = "nomes.txt", dtype=str)
     
-    if dia_semana == 0 and nomes[0] == dataHoje: ## nome[0] quarda a data ta da ultima atualização que precisa ser diferente para atualizar uma vez no dia escolhido apos isso a data passa á ser igual impedindo atualizar por uma semana
+    if dia_semana == 4 and nomes[0] != dataHoje: ## nome[0] quarda a data ta da ultima atualização que precisa ser diferente para atualizar uma vez no dia escolhido apos isso a data passa á ser igual impedindo atualizar por uma semana
         n = nomes[6]
         nomes = np.delete(nomes,(6),axis=0)
         nomes = np.insert(nomes, 1, n)
