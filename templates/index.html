@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Traz o Pão</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
+
+<body style="background-color: rgb(198, 243, 221); margin-top: 75px;">
+
+    <div class="container">
+        <h2 class="text-center"><u>Lista de Quem Traz Paes</u></h2><br>
+        <table class="table table-dark table-striped" style="background-color: rgb(56, 146, 116); border: 1px solid black;">
+            <thead>
+                <tr>
+                    <th>Segunda-Feira</th>
+                    <th>Terca-Feira</th>
+                    <th>Quarta-Feira</th>
+                    <th>Quinta-Feira</th>
+                    <th>Sexta-Feira</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- jinja2 Technique -->
+                {% if d %}
+                {% for i in d %}
+                <tr>
+                    <td>{{i.Segunda}}</td>
+                    <td>{{i.Terca}}</td>
+                    <td>{{i.Quarta}}</td>
+                    <td>{{i.Quinta}}</td>
+                    <td>{{i.Sexta}}</td>
+                </tr>
+                {% endfor %}
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+
+</body>
+
+</html>
